@@ -57,4 +57,5 @@ join child_wish_list
 	on child_wish_list.child_id = children.child_id
 join toy_catalogue as primary_toy_catalogue
 	on primary_toy_catalogue.toy_name = child_wish_list.primary_wish
+order by children.name asc
 limit 5
