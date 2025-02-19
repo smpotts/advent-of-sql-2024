@@ -15,5 +15,13 @@ with expanded_emails as (
         from contact_list
 )
 
-select *
-from expanded_emails;
+select
+	split_part(email, '@', 2) AS email_domain,
+	count(*) as contact_count
+from expanded_emails
+group by 1
+order by count(*) desc
+
+
+
+
